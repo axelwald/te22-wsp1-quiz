@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% block content %}
+<main class="container">
+  <h1>{{message}}</h1>
+
+  <ul>  
+    {% for item in result %}
+      <li>
+        <h2>{{item.question}}</h2>
+        <h3>Rätt svar: {{item.answer}}</h3>
+        {% if item.correct %}
+        <h3 class="correct">Rätt</h3>
+        {% else %}
+        <h3 class="incorrect">Fel</h3>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  <p><a href="/quiz/">Gör quizzet igen</a></p>
+</main>
+{% endblock %}
